@@ -16,8 +16,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-Base.metadata.create_all(bind=engine)
-
 @app.post("/notes", response_model=NoteRead)
 def create_note(
     note: NoteCreate,
